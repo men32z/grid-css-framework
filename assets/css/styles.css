@@ -60,6 +60,36 @@ h6 {
   margin-left: auto;
 }
 
+@media (min-width: 576px) {
+  .container-grid {
+    max-width: 536px;
+  }
+}
+
+@media (min-width: 720px) {
+  .container-grid {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container-grid {
+    max-width: 920px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-grid {
+    max-width: 990px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-grid {
+    max-width: 1160px;
+  }
+}
+
 .container-fluid-grid {
   width: 100%;
   padding-right: 15px;
