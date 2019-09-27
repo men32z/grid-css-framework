@@ -3,7 +3,18 @@ $bg-color: #ede2c2
 body,
 html,
 *
+  margin: 0
+  padding: 0
+  border: 0
   box-sizing: border-box
 
-.example-class
-  display: flex
+/* 'H' styles */
+
+h1, h2, h3, h4, h5, h6
+  font-family: helvetica
+  font-weight: bold
+$num: 1
+@while $num <= 6
+  h#{$num}
+    font-size: #{2.5 - (.25 * $num)}rem
+  $num: $num + 1
