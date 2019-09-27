@@ -4,4 +4,8 @@ html,
   box-sizing: border-box;
 }
 
+.example-class {
+  display: flex;
+}
+
 /*# sourceMappingURL=styles.css.map */
