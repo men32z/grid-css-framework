@@ -6,10 +6,10 @@ $media-screens: ("xs": 576px, "sm": 720px,  "md": 960px,  "lg": 1024px,  "xl": 1
 
 @mixin mediaScreenContent($sizeName)
   @media (min-width: mediaScreen($sizeName))
-    @content 
-    
-    
-  
+    @content
+
+
+
 
 body,
 html,
@@ -18,10 +18,10 @@ html,
   padding: 0
   border: 0
   box-sizing: border-box
-  font-size: 12px;
+  font-size: 12px
   font-family: Arial, Helvetica, sans-serif
   font-weight: normal
-  line-height: 12px;
+  line-height: 12px
 
 /* 'H' styles */
 
@@ -63,3 +63,10 @@ $num: 1
   padding-left: 15px
   margin-right: auto
   margin-left: auto
+
+$num : 1
+@while $num <= 12
+  @each $key, $value in $media-screens
+    .cl-#{$key}-#{$num}
+      width: 100% * ($num/12)
+  $num : $num + 1
