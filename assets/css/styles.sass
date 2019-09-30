@@ -1,105 +1,50 @@
-$bg-color: #ede2c2
-$media-screens: ( "sm": 720px,  "md": 960px,  "lg": 1024px,  "xl": 1200px )
+$colors: ('one': #CCDBDC, 'two': #9AD1D4, 'three': #80CED7, 'four' : #007EA7, 'five' : #003249)
+@function color($color)
+  @return map-get($colors, $color)
 
-@function mediaScreen($sizeName)
-  @return map-get($media-screens, $sizeName)
+body
+  background-color: color('one')
+  color: color('five')
 
-@mixin mediaScreenContent($sizeName)
-  @media (min-width: mediaScreen($sizeName))
-    @content
+.btn
+  display: inline-block
+  font-weight: 400
+  text-align: center
+  white-space: nowrap
+  vertical-align: middle
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  border: 1px solid transparent
+  padding: .375rem .75rem
+  font-size: 1rem
+  line-height: 1.5
+  border-radius: .25rem
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
 
+.btn-download
+  font-weight: 500
+  background-color: transparent
+  color: #ffe484
+  border-color: #ffe484
 
+.btn-download:hover
+  color: #2a2730
+  background-color: #ffe484
+  border-color: #ffe484
 
-
-body,
-html,
-*
-  margin: 0
-  padding: 0
-  border: 0
-  box-sizing: border-box
-  font-size: 12px
-  font-family: Arial, Helvetica, sans-serif
-  font-weight: normal
-  line-height: 12px
-
-/* 'H' styles */
-
-h1, h2, h3, h4, h5, h6
-  font-family: helvetica
-  font-weight: bold
-$num: 1
-@while $num <= 6
-  h#{$num}
-    font-size: #{2.5 - (.25 * $num)}rem
-  $num: $num + 1
-
-/* Grid */
-/*row*/
-.rw
-  display: flex
-  flex-wrap: wrap
-
-.container-grid
-  width: 100%
-  padding-right: 15px
-  padding-left: 15px
-  margin-right: auto
-  margin-left: auto
-  $num : 1
-  @each $key, $value in $media-screens
-    @include mediaScreenContent (#{$key})
-      max-width: #{$value - 40px}
-    $num : $num + 1
-
-.container-fluid-grid
-  width: 100%
-  padding-right: 15px
-  padding-left: 15px
-  margin-right: auto
-  margin-left: auto
-
-
-/* Default width 100% */
-$num : 1
-$nameClass : ""
-@while $num <= 12
-  @each $key, $value in $media-screens
-    $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
-  $num : $num + 1
-
-#{$nameClass}
-  position: relative 
-  width: 100% 
-  min-height: 1px 
-  padding-right: 15px
-  padding-left: 15px
-  
-/* Cols for default value (without screens)*///I
-$num : 1
-@while $num <= 12
-  .cl-#{$num}
-    width: 100% * ($num/12)
-  $num : $num + 1
-
-/*Cols for every screen and different widths*/
-$num : 1
-$nameClass : ""
-@while $num <= 12
-  @each $key, $value in $media-screens
-    $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
-    .cl-#{$key}-#{$num}
-      @include mediaScreenContent (#{$key})
-        width: 100% * ($num/12)
-  $num : $num + 1
-
-/*Display Flex for default*/
-.d-flex-grid
-  display: flex
-/*Display flex for every screen*/
-@each $key, $value in $media-screens
-  .d-#{$key}-flex-grid
-    @include mediaScreenContent (#{$key})
-      display: flex
-
-
+.main-menu
+  display: inline
+  list-style-type: none
+  li
+    display: inline
+.right-main-menu
+  display: inline
+  list-style-type: none
+  li
+    display: inline
+  svg
+    max-width: 50px
+.logo
+  display: inline
