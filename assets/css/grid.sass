@@ -18,7 +18,7 @@ html,
   font-size: 1rem
   font-family: Arial, Helvetica, sans-serif
   font-weight: normal
-  line-height: 12px
+  line-height: 1rem
 
 /* 'H' styles */
 
@@ -81,15 +81,15 @@ $num : 1
   $num : $num + 1
 
 /*Cols for every screen and different widths*/
-$num : 1
 $nameClass : ""
-@while $num <= 12
-  @each $key, $value in $media-screens
+@each $key, $value in $media-screens
+  $num : 1
+  @while $num <= 12
     $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
     .cl-#{$key}-#{$num}
       @include mediaScreenContent (#{$key})
         width: 100% * ($num/12)
-  $num : $num + 1
+    $num : $num + 1
 
 /*Display Flex for default*/
 .d-flex-grid
@@ -137,5 +137,3 @@ $properties : (top, right, bottom, left)
     .m-#{$prop}-#{$num}
       margin-#{$prop}: 0rem + ($num * 0.25rem)
   $num : $num + 1
-
-
