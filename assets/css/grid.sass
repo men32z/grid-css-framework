@@ -8,9 +8,6 @@ $media-screens: ( "sm": 720px,  "md": 960px,  "lg": 1024px,  "xl": 1200px )
   @media (min-width: mediaScreen($sizeName))
     @content
 
-
-
-
 body,
 html,
 *
@@ -113,3 +110,24 @@ $nameClass : ""
   .d-#{$key}-none-grid
     @include mediaScreenContent (#{$key})
       display: none
+
+/* text aling */
+$properties : (left, right, center, justify)
+@each $prop in $properties
+  .text-#{$prop}
+    text-align: #{$prop}
+
+/* aling items */
+$properties : (baseline, center, flex-end, flex-start, end, start)
+@each $prop in $properties
+  .align-items-#{$prop}
+    align-items: #{$prop}
+
+/* padding and margin */
+$num : 1
+@while $num < 5
+  .p-#{$num}
+    padding: 0.5rem + ($num * 0.25rem)
+  .m-#{$num}
+    margin: 0.5rem + ($num * 0.25rem)
+  $num : $num + 1
