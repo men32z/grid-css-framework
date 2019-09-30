@@ -1,5 +1,5 @@
 $bg-color: #ede2c2
-$media-screens: ("xs": 576px, "sm": 720px,  "md": 960px,  "lg": 1024px,  "xl": 1200px )
+$media-screens: ( "sm": 720px,  "md": 960px,  "lg": 1024px,  "xl": 1200px )
 
 @function mediaScreen($sizeName)
   @return map-get($media-screens, $sizeName)
@@ -59,9 +59,47 @@ $num: 1
   margin-right: auto
   margin-left: auto
 
+
+/* Default width 100% */
 $num : 1
+$nameClass : ""
 @while $num <= 12
   @each $key, $value in $media-screens
-    .cl-#{$key}-#{$num}
-      width: 100% * ($num/12)
+    $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
   $num : $num + 1
+
+#{$nameClass}
+  position: relative 
+  width: 100% 
+  min-height: 1px 
+  padding-right: 15px
+  padding-left: 15px
+  
+/* Cols for default value (without screens)*///I
+$num : 1
+@while $num <= 12
+  .cl-#{$num}
+    width: 100% * ($num/12)
+  $num : $num + 1
+
+/*Cols for every screen and different widths*/
+$num : 1
+$nameClass : ""
+@while $num <= 12
+  @each $key, $value in $media-screens
+    $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
+    .cl-#{$key}-#{$num}
+      @include mediaScreenContent (#{$key})
+        width: 100% * ($num/12)
+  $num : $num + 1
+
+/*Display Flex for default*/
+.d-flex-grid
+  display: flex
+/*Display flex for every screen*/
+@each $key, $value in $media-screens
+  .d-#{$key}-flex-grid
+    @include mediaScreenContent (#{$key})
+      display: flex
+
+
