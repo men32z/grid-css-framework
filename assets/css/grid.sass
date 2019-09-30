@@ -124,10 +124,18 @@ $properties : (baseline, center, flex-end, flex-start, end, start)
     align-items: #{$prop}
 
 /* padding and margin */
-$num : 1
-@while $num < 5
+$num : 0
+$properties : (top, right, bottom, left)
+@while $num < 6
   .p-#{$num}
-    padding: 0.5rem + ($num * 0.25rem)
+    padding: 0rem + ($num * 0.25rem)
   .m-#{$num}
-    margin: 0.5rem + ($num * 0.25rem)
+    margin: 0rem + ($num * 0.25rem)
+  @each $prop in $properties
+    .p-#{$prop}-#{$num}
+      padding-#{$prop}: 0rem + ($num * 0.25rem)
+    .m-#{$prop}-#{$num}
+      margin-#{$prop}: 0rem + ($num * 0.25rem)
   $num : $num + 1
+
+
