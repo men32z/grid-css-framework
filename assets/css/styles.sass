@@ -46,16 +46,11 @@ $num: 1
   padding-left: 15px
   margin-right: auto
   margin-left: auto
-  @include mediaScreenContent ("xs")
-    max-width: 536px
-  @include mediaScreenContent ("sm")
-    max-width: 680px
-  @include mediaScreenContent ("md")
-    max-width: 920px
-  @include mediaScreenContent ("lg")
-    max-width: 990px
-  @include mediaScreenContent ("xl")
-    max-width: 1160px
+  $num : 1
+  @each $key, $value in $media-screens
+    @include mediaScreenContent (#{$key})
+      max-width: #{$value - 40px}
+    $num : $num + 1
 
 .container-fluid-grid
   width: 100%
