@@ -14,12 +14,12 @@ a:hover {
 
 .top-navbar, .top-navbar div {
   font-size: 14px;
-  background-color: #322348;
+  background-color: #003249;
   color: white;
 }
 
 .bd-navbar {
-  background-color: #563d7c;
+  background-color: #007EA7;
   color: #fff;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -70,7 +70,7 @@ ul li {
 
 ul li a {
   text-decoration: none;
-  color: #cbbde2;
+  color: #80CED7;
 }
 
 ul li a:hover {
