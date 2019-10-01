@@ -159,6 +159,10 @@ ul
   font-size: 1.125rem
   font-weight: 300
   line-height: 27px
+  code
+    font-size: 87.5%
+    color: #e83e8c
+    word-break: break-word
 
 .main-content
   a
@@ -201,3 +205,48 @@ ul
     padding-bottom: .75rem
     background-color: rgba(86,61,124,.15)
     border: 1px solid rgba(86,61,124,.2)
+
+/* Grid Options CSS INITAL PART*/
+.table
+  display: block
+  overflow-x: auto
+  width: 100%
+  max-width: 100%
+  margin-bottom: 1rem
+  background-color: transparent
+  border-collapse: collapse
+  @include mediaScreenContent('md')
+    display: table
+  th
+    padding: .75rem
+    vertical-align: top
+    border: 1px solid #dee2e6
+  small
+    font-size: 80%
+    font-weight: 400
+  tbody
+    tr
+      td
+        padding: .75rem
+        vertical-align: top
+        border: 1px solid #dee2e6
+  code
+    font-size: 87.5%
+    color: #e83e8c
+    word-break: break-word
+
+
+.table-striped
+  tbody 
+    tr:nth-of-type(odd)
+      background-color: rgba(0, 0, 0, 0.05)
+
+.text-nowrap
+  text-align: left
+  white-space: nowrap!important
+
+.text-center, .text-nowrap
+  font-size: 16px
+  font-weight: 700
+/* Grid Options CSS FINAL PART*/
+
