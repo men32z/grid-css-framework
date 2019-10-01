@@ -16,11 +16,19 @@ body
   background-color: white
   color: color('five')
 
+main.container-fluid-grid
+  padding-top: 90px
 a
   text-decoration: none
   color: #99979c
 a:hover
   color: #007bff
+
+.top-navbar
+  position: fixed
+  top: 0
+  height: 30px
+  z-index: 100
 
 .top-navbar, .top-navbar div
   font-size: 14px
@@ -31,6 +39,9 @@ a:hover
   background-color: color('four')
   color: #fff
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,.05), inset 0 -1px 0 rgba(0,0,0,.1)
+  position: fixed
+  z-index: 100
+  top: 30px
 
 .btn
   display: inline-block
@@ -200,13 +211,18 @@ ul
 
 .example-row
   width: 100%
+  .example
+    padding: 20px
+    border: 1px solid color('one')
+  .highlight
+    padding: 20px
+    background-color: #e6ebf2
   .rw>[class^=cl-]
     padding-top: .75rem
     padding-bottom: .75rem
     background-color: rgba(86,61,124,.15)
     border: 1px solid rgba(86,61,124,.2)
 
-/* Grid Options CSS INITAL PART*/
 .table
   display: block
   overflow-x: auto
@@ -237,7 +253,7 @@ ul
 
 
 .table-striped
-  tbody 
+  tbody
     tr:nth-of-type(odd)
       background-color: rgba(0, 0, 0, 0.05)
 
@@ -248,5 +264,16 @@ ul
 .text-center, .text-nowrap
   font-size: 16px
   font-weight: 700
-/* Grid Options CSS FINAL PART*/
 
+code
+  font-size: 87.5%
+  word-break: break-word
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
+  font-size: 1rem
+  font-weight: 400
+  .nt
+    color: #2f6f9f
+  .na
+    color: #4f9fcf
+  .s
+    color: #e83e8c
