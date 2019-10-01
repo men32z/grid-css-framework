@@ -112,9 +112,9 @@
             </div>
             <div class="rw">
               <h2 class="p-top-5">How it works</h2>
-              <p class="p-top-5 p-bottom-5">Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with <a href="#">flexbox</a> and is fully responsive. Below is an example and an in-depth look at how the grid comes together.</p>
+              <p class="p-top-5 p-bottom-5 blog-content">Bootstrap’s grid system uses a series of containers, rows, and columns to layout and align content. It’s built with <a href="#">flexbox</a> and is fully responsive. Below is an example and an in-depth look at how the grid comes together.</p>
 
-              <b>New to or unfamiliar with flexbox? </b>&nbsp; <a href="#">Read this CSS Tricks flexbox guide</a> for background, terminology, guidelines, and code snippets.
+              <p class="blog-content"><b>New to or unfamiliar with flexbox? </b>&nbsp; <a href="#">Read this CSS Tricks flexbox guide</a> for background, terminology, guidelines, and code snippets.</p>
             </div>
             <div class="example-row">
               <div class="example rw">
@@ -143,6 +143,73 @@
                   </code>
                 </pre>
               </div>
+            </div>
+            <div class="grid-options rw">
+              <h2 class="p-top-5">Grid Options</h2>
+              <p class="p-top-3 p-bottom-5 blog-content">While Bootstrap uses <code>ems</code> or <code>rems</code> for defining most sizes, <code>px</code>s are used for grid breakpoints and container widths. This is because the viewport width is in pixels and does not change with the <a href="#"> font size</a>.</p>
+              <p class="p-bottom-5 blog-content">See how aspects of the Bootstrap grid system work across multiple devices with a handy table.</p>
+              <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th class="text-center">
+                        Extra small<br>
+                        <small>&lt;720px</small>
+                      </th>
+                      <th class="text-center">
+                        Small<br>
+                        <small>≥720px</small>
+                      </th>
+                      <th class="text-center">
+                        Medium<br>
+                        <small>≥960px</small>
+                      </th>
+                      <th class="text-center">
+                        Large<br>
+                        <small>≥1024px</small>
+                      </th>
+                      <th class="text-center">
+                        Extra large<br>
+                        <small>≥1200px</small>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="text-nowrap" scope="row">Max container width</th>
+                      <td>None (auto)</td>
+                      <td>680px</td>
+                      <td>920px</td>
+                      <td>984px</td>
+                      <td>1160px</td>
+                    </tr>
+                    <tr>
+                      <th class="text-nowrap" scope="row">Class prefix</th>
+                      <td><code>.cl-</code></td>
+                      <td><code>.cl-sm-</code></td>
+                      <td><code>.cl-md-</code></td>
+                      <td><code>.cl-lg-</code></td>
+                      <td><code>.cl-xl-</code></td>
+                    </tr>
+                    <tr>
+                      <th class="text-nowrap" scope="row"># of columns</th>
+                      <td colspan="5">12</td>
+                    </tr>
+                    <tr>
+                      <th class="text-nowrap" scope="row">Gutter width</th>
+                      <td colspan="5">30px (15px on each side of a column)</td>
+                    </tr>
+                    <tr>
+                      <th class="text-nowrap" scope="row">Nestable</th>
+                      <td colspan="5">Yes</td>
+                    </tr>
+                    <tr>
+                      <th class="text-nowrap" scope="row">Column ordering</th>
+                      <td colspan="5">NO</td>
+                    </tr>
+                  </tbody>
+              </table>
+
             </div>
           </div>
           <aside class="d-none-grid d-xl-block-grid cl-xl-2 p-top-4 p-bottom-4 sidebar-right">
