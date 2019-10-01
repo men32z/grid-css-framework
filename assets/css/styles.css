@@ -172,4 +172,48 @@ ul li a:hover {
   font-weight: 500;
   line-height: 24px;
 }
+
+.blog-title {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.blog-content {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 27px;
+}
+
+.ad-section {
+  max-width: 400px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.ad-section a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.ad-section img {
+  max-width: 130px;
+}
+
+.ad-section .ad-image, .ad-section .ad-text {
+  padding: 15px;
+}
+
+.ad-section .ad-text {
+  padding-left: 0;
+}
+
+.ad-section .ad-text a {
+  font-size: 13px;
+}
 /*# sourceMappingURL=styles.css.map */
