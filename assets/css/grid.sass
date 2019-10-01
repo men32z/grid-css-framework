@@ -18,7 +18,11 @@ html,
   font-size: 1rem
   font-family: Arial, Helvetica, sans-serif
   font-weight: normal
-  line-height: 1rem
+
+b
+  font-weight: bold
+p, a, b
+  font-family: inherit
 
 /* 'H' styles */
 
@@ -61,6 +65,17 @@ $num: 1
 /* Default width 100% */
 $num : 1
 $nameClass : ""
+
+@each $key, $value in $media-screens
+  $nameClass : ".cl-#{$key}, " + $nameClass
+  .cl-#{$key}
+    @include mediaScreenContent (#{$key})
+      flex-basis: 0
+      -webkit-box-flex: 1
+      -ms-flex-positive: 1
+      flex-grow: 1
+      max-width: 100%
+
 @while $num <= 12
   @each $key, $value in $media-screens
     $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
@@ -80,12 +95,11 @@ $num : 1
     width: 100% * ($num/12)
   $num : $num + 1
 
+
 /*Cols for every screen and different widths*/
-$nameClass : ""
 @each $key, $value in $media-screens
   $num : 1
   @while $num <= 12
-    $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
     .cl-#{$key}-#{$num}
       @include mediaScreenContent (#{$key})
         width: 100% * ($num/12)

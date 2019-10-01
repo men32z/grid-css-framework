@@ -1,5 +1,5 @@
 body {
-  background-color: #CCDBDC;
+  background-color: white;
   color: #003249;
 }
 
@@ -21,8 +21,7 @@ a:hover {
 .bd-navbar {
   background-color: #563d7c;
   color: #fff;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .btn {
@@ -36,14 +35,11 @@ a:hover {
   -ms-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  padding: .375rem .75rem;
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: .25rem;
-  -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn-download {
@@ -104,14 +100,14 @@ ul li a:hover {
 .search-input {
   display: block;
   width: 100%;
-  padding: .375rem .75rem;
+  padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .button-toggle {
@@ -120,7 +116,7 @@ ul li a:hover {
   vertical-align: middle;
   border: 1px solid transparent;
   font-size: 1rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   background: transparent;
 }
 
@@ -142,17 +138,30 @@ ul li a:hover {
   color: #007bff;
 }
 
+@media (min-width: 720px) {
+  .sidebar-right {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
 .sidebar-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: baseline;
-      align-content: baseline;
+  align-content: baseline;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+@media (min-width: 720px) {
+  .sidebar-left {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+@media (min-width: 720px) {
+  .sidebar-left {
+    border-bottom: none;
+  }
+}
 .layout-link a {
   display: block;
-  padding: .25rem 0;
+  padding: 0.25rem 0;
   font-weight: 500;
   color: #99979c;
   line-height: 24px;
@@ -175,7 +184,7 @@ ul li a:hover {
 
 .blog-title {
   margin-top: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   font-weight: 300;
   line-height: 1.2;
 }
@@ -186,6 +195,29 @@ ul li a:hover {
   line-height: 27px;
 }
 
+.main-content a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.main-content a:hover {
+  text-decoration: underline;
+}
+
+.main-content > div {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@media (min-width: 720px) {
+  .main-content > div {
+    padding-left: 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .main-content > div {
+    max-width: 80%;
+  }
+}
 .ad-section {
   max-width: 400px;
   overflow: hidden;
@@ -216,4 +248,33 @@ ul li a:hover {
 .ad-section .ad-text a {
   font-size: 13px;
 }
+
+.example-row {
+  width: 100%;
+}
+
+.example-row .rw > [class^=cl-] {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid rgba(86, 61, 124, 0.2);
+}
+
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.css.map */
+
 /*# sourceMappingURL=styles.css.map */
