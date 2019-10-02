@@ -1,0 +1,153 @@
+$bg-color: #ede2c2
+$media-screens: ( "sm": 720px,  "md": 960px,  "lg": 1024px,  "xl": 1200px )
+
+@function mediaScreen($sizeName)
+  @return map-get($media-screens, $sizeName)
+
+@mixin mediaScreenContent($sizeName)
+  @media (min-width: mediaScreen($sizeName))
+    @content
+
+body,
+html,
+*
+  margin: 0
+  padding: 0
+  border: 0
+  box-sizing: border-box
+  font-size: 1rem
+  font-family: Arial, Helvetica, sans-serif
+  font-weight: normal
+
+b
+  font-weight: bold
+p, a, b
+  font-family: inherit
+
+/* 'H' styles */
+
+h1, h2, h3, h4, h5, h6
+  font-family: helvetica
+  font-weight: bold
+$num: 1
+@while $num <= 6
+  h#{$num}
+    font-size: #{2.5 - (.25 * $num)}rem
+  $num: $num + 1
+
+/* Grid */
+/*row*/
+.rw
+  display: flex
+  flex-wrap: wrap
+
+.container-grid
+  width: 100%
+  padding-right: 15px
+  padding-left: 15px
+  margin-right: auto
+  margin-left: auto
+
+  $num : 1
+  @each $key, $value in $media-screens
+    @include mediaScreenContent (#{$key})
+      max-width: #{$value - 40px}
+    $num : $num + 1
+
+.container-fluid-grid
+  width: 100%
+  padding-right: 15px
+  padding-left: 15px
+  margin-right: auto
+  margin-left: auto
+
+
+/* Default width 100% */
+$num : 1
+$nameClass : ""
+
+@each $key, $value in $media-screens
+  $nameClass : ".cl-#{$key}, " + $nameClass
+  .cl-#{$key}
+    @include mediaScreenContent (#{$key})
+      flex-basis: 0
+      -webkit-box-flex: 1
+      -ms-flex-positive: 1
+      flex-grow: 1
+      max-width: 100%
+
+@while $num <= 12
+  @each $key, $value in $media-screens
+    $nameClass : ".cl-#{$key}-#{$num}, " + $nameClass
+  $num : $num + 1
+
+#{$nameClass}
+  position: relative
+  width: 100%
+  min-height: 1px
+  padding-right: 15px
+  padding-left: 15px
+
+/* Cols for default value (without screens)*/
+$num : 1
+@while $num <= 12
+  .cl-#{$num}
+    width: 100% * ($num/12)
+  $num : $num + 1
+
+
+/*Cols for every screen and different widths*/
+@each $key, $value in $media-screens
+  $num : 1
+  @while $num <= 12
+    .cl-#{$key}-#{$num}
+      @include mediaScreenContent (#{$key})
+        width: 100% * ($num/12)
+    $num : $num + 1
+
+/*Display Flex for default*/
+.d-flex-grid
+  display: flex
+.d-none-grid
+  display: none
+.d-block-grid
+  display: block
+
+/*Display flex for every screen*/
+@each $key, $value in $media-screens
+  .d-#{$key}-flex-grid
+    @include mediaScreenContent (#{$key})
+      display: flex
+  .d-#{$key}-block-grid
+    @include mediaScreenContent (#{$key})
+      display: block
+  .d-#{$key}-none-grid
+    @include mediaScreenContent (#{$key})
+      display: none
+
+/* text aling */
+$properties : (left, right, center, justify)
+@each $prop in $properties
+  .text-#{$prop}
+    text-align: #{$prop}
+
+/* aling items */
+$properties : (baseline, center, flex-end, flex-start, end, start)
+@each $prop in $properties
+  .align-items-#{$prop}
+    align-items: #{$prop}
+
+/* padding and margin */
+$num : 0
+$properties : (top, right, bottom, left)
+@while $num < 6
+  .p-#{$num}
+    padding: 0rem + ($num * 0.25rem)
+  .m-#{$num}
+    margin: 0rem + ($num * 0.25rem)
+  @each $prop in $properties
+    .p-#{$prop}-#{$num}
+      padding-#{$prop}: 0rem + ($num * 0.25rem)
+    .m-#{$prop}-#{$num}
+      margin-#{$prop}: 0rem + ($num * 0.25rem)
+  $num : $num + 1
